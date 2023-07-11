@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import './App.css'
-
 import Home from './pages/Home'
 import Categoria from './pages/Categoria'
+import { ShopProvider } from './context/ShopCon'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Categoria/>
+    <ShopProvider>
+
+    <Home/>
+
+    </ShopProvider>
     </>
       
   )

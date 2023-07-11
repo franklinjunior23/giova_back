@@ -1,15 +1,19 @@
-import React from 'react'
-import User from '../view/User'
+import React from "react";
+import User from "../view/User";
+import Carrusel from "../components/Carrusel";
+import Products from "../components/Products";
+
+import Abaut from "../components/Abaut";
 
 function Home() {
   return (
-   <User>
-   IMAGEN 
-   IMAGEN2
-   IMAGEN3
-   
-   </User>
-  )
+    <User>
+      <Carrusel/>
+      <Products/>
+      <Abaut/>
+      
+    </User>
+  );
 }
 
-export default Home
+export default Home;
