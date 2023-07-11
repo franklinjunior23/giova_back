@@ -5,7 +5,7 @@ import Pie from '../components/Pie'
 function User({children}) {
   return (
     <>
-    <Cabecera palabrauno={'hola desde home'} />
+    <Cabecera />
         {children}
     <Pie/>
     </>
