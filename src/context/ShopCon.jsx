@@ -7,7 +7,7 @@ export const ShopUseContext = ()=>{
 }
 
 export const ShopProvider= ({children})=>{
-    const [ListShop, setListShop] = useState([]);
+    const [ListShop, setListShop] = useState('');
     
     const addShop= ()=>{
 
