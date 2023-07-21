@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-
+import PropTypes from 'prop-types';
 const ShopContext = createContext();
 export const ShopUseContext = ()=>{
     const data = useContext(ShopContext);
@@ -7,10 +7,10 @@ export const ShopUseContext = ()=>{
 }
 
 export const ShopProvider= ({children})=>{
-    const [ListShop, setListShop] = useState('');
+    const [ListShop, setListShop] = useState([]);
     
-    const addShop= ()=>{
-
+    const addShop= (shop)=>{
+        setListShop([...ListShop,shop])
     }
 
     return (
@@ -19,3 +19,6 @@ export const ShopProvider= ({children})=>{
         </ShopContext.Provider>
     )
 }
+ShopProvider.propTypes = {
+children: PropTypes.node.isRequired,
+};
