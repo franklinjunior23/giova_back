@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import ItemProduct from './ItemProduct'
 import axios from 'axios';
 import ContentLoader from 'react-content-loader';
@@ -6,7 +6,7 @@ import ContentLoader from 'react-content-loader';
 function Products() {
   const [Products, setProducts] = useState([]);
   const GetProducts = async()=>{
-    const data = await axios.get('http://localhost:3000/api/products');
+    const data = await axios.get('http://localhost:3000/api/Products');
     setProducts(data.data)
   }
   useEffect(() => {

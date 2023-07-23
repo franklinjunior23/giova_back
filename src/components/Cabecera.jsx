@@ -41,7 +41,7 @@ function Cabecera() {
                  
                 </li>
                 <li>
-                  <Link to={'Nosotros'}  className="inline-block no-underline hover:text-black hover:underline py-2 px-4" >Sobre Nosotros</Link>
+                  <Link to={'/Nosotros'}  className="inline-block no-underline hover:text-black hover:underline py-2 px-4" >Sobre Nosotros</Link>
                 </li>
               </ul>
             </nav>
@@ -71,7 +71,7 @@ function Cabecera() {
           >
             <Link
               className="inline-block no-underline hover:text-black"
-              to={'Login'}
+              to={'/Login'}
               
             >
               <svg
