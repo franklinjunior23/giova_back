@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModShop from "./ModShop";
 import { Link } from "react-router-dom";
+import { useLogin } from "../context/Auth";
+import MenUser from "./MenUser";
 
 function Cabecera() {
+  const { UsuarioLog } = useLogin();
   const [ActiveModal, setActiveModal] = useState(false);
 
   const ModalActive = () => {
     setActiveModal(!ActiveModal);
   };
-
   return (
     <>
       <nav id="header" className="w-full z-30 top-0 py-1">
@@ -37,11 +39,21 @@ function Cabecera() {
             <nav>
               <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                 <li>
-                  <Link to={'/'} className="inline-block no-underline hover:text-black hover:underline py-2 px-4"> Shop</Link>
-                 
+                  <Link
+                    to={"/"}
+                    className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                  >
+                    {" "}
+                    Shop
+                  </Link>
                 </li>
                 <li>
-                  <Link to={'Nosotros'}  className="inline-block no-underline hover:text-black hover:underline py-2 px-4" >Sobre Nosotros</Link>
+                  <Link
+                    to={"/Nosotros"}
+                    className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                  >
+                    Sobre Nosotros
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -50,7 +62,7 @@ function Cabecera() {
           <div className="order-1 md:order-2">
             <Link
               className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-              to={'/'}
+              to={"/"}
             >
               <svg
                 className="fill-current text-gray-800 mr-2"
@@ -69,22 +81,25 @@ function Cabecera() {
             className="order-2 md:order-3 flex items-center"
             id="nav-content"
           >
-            <Link
-              className="inline-block no-underline hover:text-black"
-              to={'Login'}
-              
-            >
-              <svg
-                className="fill-current hover:text-black"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+            {UsuarioLog.length!==0  ? (
+              <MenUser datos={UsuarioLog} />
+            ) : (
+              <Link
+                className="inline-block no-underline hover:text-black"
+                to={"/Login"}
               >
-                <circle fill="none" cx="12" cy="7" r="3" />
-                <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
-              </svg>
-            </Link>
+                <svg
+                  className="fill-current hover:text-black"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <circle fill="none" cx="12" cy="7" r="3" />
+                  <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
+                </svg>
+              </Link>
+            )}
 
             <i
               className="pl-3 inline-block no-underline hover:text-black cursor-pointer"
@@ -106,7 +121,7 @@ function Cabecera() {
           </div>
         </div>
       </nav>
-      {ActiveModal && <ModShop funct={ModalActive}/>}
+      {ActiveModal && <ModShop funct={ModalActive} />}
     </>
   );
 }
