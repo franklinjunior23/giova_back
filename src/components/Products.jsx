@@ -6,8 +6,13 @@ import ContentLoader from 'react-content-loader';
 function Products() {
   const [Products, setProducts] = useState([]);
   const GetProducts = async()=>{
-    const data = await axios.get('http://localhost:3000/api/Products');
-    setProducts(data.data)
+    try {
+      const data = await axios.get('http://localhost:3000/api/Products');
+      setProducts(data.data)
+    } catch (error) {
+      console.log(error+'error de products')
+    }
+   
   }
   useEffect(() => {
     GetProducts()

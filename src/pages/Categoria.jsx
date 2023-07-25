@@ -1,7 +1,6 @@
-import User from "../view/User";
 
 function Categoria() {
-  return <User>soy una categoria</User>;
+  return <>soy una categoria</>;
 }
 
 export default Categoria;
