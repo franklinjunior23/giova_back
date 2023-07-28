@@ -1,17 +1,12 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import { useLogin } from "../context/Auth";
 import axios from "axios";
-import {  useState } from "react";
+import { useState } from "react";
 import axiosInstance from "../api/ConfigApi";
 
-
-
 function Login() {
-  const {  AddUser } = useLogin();
+  const { AddUser } = useLogin();
   const [CambioXit, setCambioXit] = useState(false);
-
-    
-  
 
   const HandleLogin = useGoogleLogin({
     onSuccess: async (respose) => {
@@ -23,7 +18,7 @@ function Login() {
               Authorization: `Bearer ${respose.access_token}`,
             },
           }
-        ); 
+        );
         AddUser(respues.data);
         const resp = await axiosInstance.post(
           "/api/Auth/LoginGoogle",
@@ -38,14 +33,11 @@ function Login() {
       }
     },
   });
-  
-
 
   const HandleSubmitDefault = (e) => {
     e.preventDefault();
   };
-  
-  
+
   return (
     <>
       <main

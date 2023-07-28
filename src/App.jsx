@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import { ShopProvider } from "./context/ShopCon";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProductID from "./pages/ProductID";
 import Nosotros from "./pages/Nosotros";
 import Login from "./pages/Login";
@@ -9,6 +9,8 @@ import Checkout from "./pages/Checkout";
 import User from "./view/User";
 import CerrarSeccion from "./pages/CerrarSeccion";
 import Configuracion from "./pages/Configuracion";
+
+import FormEditUser from "./components/Confi/FormEditUser";
 
 function App() {
  
@@ -25,7 +27,14 @@ function App() {
                 <Route path="Login" element={<Login />} />
                 <Route path="Checkout" element={<Checkout />} />
                 <Route path="CerrarSeccion" element={ <CerrarSeccion/> } />
-                <Route path="Configuracion" element={<Configuracion />} />
+                <Route path="my-account/*" element={<Configuracion/>}>
+                  <Route index element={<Navigate to='edit'/>} />
+                  <Route  path="edit" element={<FormEditUser/>} />
+                  <Route path="Pedidos" element={<h1>Estas En pedidos</h1>} />
+                </Route>
+                <Route path="Pedidos" element={<><h1>Pedidos</h1></>} />
+
+                
               </Route>
               <Route path="*" element={<h3>Error 404</h3>} />
             </Routes>
