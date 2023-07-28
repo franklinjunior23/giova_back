@@ -2,6 +2,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { useLogin } from "../context/Auth";
 import axios from "axios";
 import {  useState } from "react";
+import axiosInstance from "../api/ConfigApi";
 
 
 
@@ -24,8 +25,8 @@ function Login() {
           }
         );
         AddUser(respues.data);
-        const resp = await axios.post(
-          "http://localhost:3000/api/Auth/LoginGoogle",
+        const resp = await axiosInstance.post(
+          "/api/Auth/LoginGoogle",
           respues.data
         );
         if (resp.data.loged) {
