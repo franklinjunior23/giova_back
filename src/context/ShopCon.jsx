@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { ProductGetOne } from "../services/api";
+
+
 const ShopContext = createContext();
 export const ShopUseContext = () => {
   const data = useContext(ShopContext);

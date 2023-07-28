@@ -1,13 +1,13 @@
 import  { useEffect, useState } from 'react'
 import ItemProduct from './ItemProduct'
-import axios from 'axios';
 import ContentLoader from 'react-content-loader';
+import { ProductsGet } from '../services/api';
 
 function Products() {
   const [Products, setProducts] = useState([]);
   const GetProducts = async()=>{
     try {
-      const data = await axios.get('http://localhost:3000/api/Products');
+      const data = await ProductsGet()
       setProducts(data.data)
     } catch (error) {
       console.log(error+'error de products')
@@ -61,22 +61,14 @@ function Products() {
         </div>
       </nav>
       
-      {
-        Products.map(data =>(
-          <ItemProduct name={data.nombre} image={data.img} precio={data.precio} key={data.id} />
-        ))
-      }
-      <ContentLoader
-      width={300}
-      height={490}
-      viewBox="0 0 450 400"
-      backgroundColor="#f0f0f0"
-      foregroundColor="#dedede"
-    >
-      <rect x="1" y="0" rx="10" ry="10" width="308" height="499" />
-      <rect x="43" y="378" rx="4" ry="4" width="271" height="9" />
-      <rect x="43" y="390" rx="3" ry="3" width="119" height="7" />
-    </ContentLoader>
+     <section className=' w-full grid grid-cols-2 items-center md:grid-cols-3 xl:grid-cols-4 gap-2  md:gap-5 px-2'>
+       {
+         Products.map(data =>(
+           <ItemProduct name={data.nombre} image={data.img} precio={data.precio} key={data.id} />
+         ))
+       }
+     </section>
+      
     </div>
   </section>
   )

@@ -1,13 +1,10 @@
-import axios from "axios";
+import axiosInstance from "../api/ConfigApi";
 
-export const APIDOM = axios.create({
-    baseURL: "http://localhost:3000/api/",
-  });
 export const ProductsGet = async()=>{
-    const data = await APIDOM.get()
+    const data = await axiosInstance.get('/api/products')
     return data
 }
 export const ProductGetOne = async(produtcname)=>{
-  const data = await APIDOM.get('products/'+produtcname)
+  const data = await axiosInstance.get('api/products/'+produtcname)
   return data;
 }

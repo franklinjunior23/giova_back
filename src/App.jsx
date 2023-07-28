@@ -27,7 +27,6 @@ function App() {
                 <Route path="CerrarSeccion" element={ <CerrarSeccion/> } />
                 <Route path="Configuracion" element={<Configuracion />} />
               </Route>
-
               <Route path="*" element={<h3>Error 404</h3>} />
             </Routes>
           </BrowserRouter>
