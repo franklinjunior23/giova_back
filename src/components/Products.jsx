@@ -62,7 +62,7 @@ function Products() {
         </div>
       </nav>
       
-     <section className=' w-full grid grid-cols-2 items-center md:grid-cols-3 xl:grid-cols-4 gap-2  md:gap-5 px-2'>
+     <section className=' w-full grid grid-cols-2  md:grid-cols-3 xl:grid-cols-4 gap-2  md:gap-5 px-2'>
        {
          Products.map(data =>(
            <ItemProduct name={data.nombre} image={data.img} precio={data.precio} key={data.id} />
