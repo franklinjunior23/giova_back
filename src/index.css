@@ -53,3 +53,17 @@
   color: #000;
   /*Set to match the Tailwind colour you want the active one to be */
 }
+
+/* styles.css */
+
+/* Estilo para ocultar los botones */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Estilo adicional para Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

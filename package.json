@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "serve dist -s -n -L -p $PORT",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-oauth/google": "^0.11.0",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
