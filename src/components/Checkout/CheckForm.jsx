@@ -7,8 +7,8 @@ function CheckForm() {
   // eslint-disable-next-line react/prop-types
   const InputForm = ({ textlabel, typeinput, value, NameInput, OnchFunc }) => {
     return (
-      <div className="grid gap-2 mb-4">
-        <label htmlFor={textlabel} className="text-sm font-medium">
+      <div className=" flex flex-col  mb-4">
+        <label htmlFor={textlabel} className="text-sm font-medium pb-2">
           {textlabel}
         </label>
         <input
@@ -49,12 +49,12 @@ function CheckForm() {
 
   return (
     <form>
-      <main className="lg:grid gap-[150px] lg:grid-cols-[600px_350px] xl: grid-cols-[600px_450px] justify-between lg:max-w-[1240px] m-auto">
+      <main className="lg:grid gap-[150px] lg:grid-cols-[600px_350px] xl: grid-cols-[600px_450px] justify-between w-full max-w-[1240px] m-auto">
         <main>
           <h3 className="text-2xl font-light py-7">Detalles de facturacion</h3>
 
           <section>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="w-full grid grid-cols-2 gap-2 lg:gap-5">
               <InputForm
                 textlabel={"Nombre Completo"}
                 NameInput={"Nombre"}
@@ -75,7 +75,7 @@ function CheckForm() {
             />
           </section>
           <section>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-2 lg:gap-5">
               <InputForm
                 textlabel={"Region"}
                 NameInput={"Region"}

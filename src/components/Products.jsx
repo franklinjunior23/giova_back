@@ -8,6 +8,7 @@ function Products() {
   const GetProducts = async()=>{
     try {
       const data = await ProductsGet()
+      console.log(data)
       setProducts(data.data)
     } catch (error) {
       console.log(error+'error de products')

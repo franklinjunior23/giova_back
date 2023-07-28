@@ -15,7 +15,7 @@ const Checkout = () => {
   }, [UsuarioLog, navi]);
   return (
     <>
-      <main className="py-5 px-6">
+      <main className="py-5 px-6  overflow-hidden">
         <CheckForm />
       </main>
     </>

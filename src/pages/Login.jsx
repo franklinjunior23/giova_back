@@ -24,11 +24,13 @@ function Login() {
             },
           }
         );
+        console.log(respues)
         AddUser(respues.data);
         const resp = await axiosInstance.post(
           "/api/Auth/LoginGoogle",
           respues.data
         );
+        console.log(resp)
         if (resp.data.loged) {
           localStorage.setItem("token", resp.data.token);
           setCambioXit(!CambioXit);
