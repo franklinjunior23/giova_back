@@ -9,12 +9,16 @@ import Checkout from "./pages/Checkout";
 import User from "./view/User";
 import CerrarSeccion from "./pages/CerrarSeccion";
 import Configuracion from "./pages/Configuracion";
-
 import FormEditUser from "./components/Confi/FormEditUser";
 import Pedidos from "./components/Confi/pedidos/Pedidos";
-
+import PedidoExitoso from "./pages/PedidoExitoso";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 function App() {
- 
+  
+
+  // ..
+  AOS.init();
   return (
     <>
       <DateLoginProvider>
@@ -28,14 +32,13 @@ function App() {
                 <Route path="Login" element={<Login />} />
                 <Route path="Checkout" element={<Checkout />} />
                 <Route path="CerrarSeccion" element={ <CerrarSeccion/> } />
+                <Route path="Succesful" element={ <PedidoExitoso/> } />
                 <Route path="my-account/*" element={<Configuracion/>}>
                   <Route index element={<Navigate to='edit'/>} />
                   <Route  path="edit" element={<FormEditUser/>} />
                   <Route path="Pedidos" element={<Pedidos/>} />
                 </Route>
                 <Route path="Pedidos" element={<><h1>Pedidos</h1></>} />
-
-                
               </Route>
               <Route path="*" element={<h3>Error 404</h3>} />
             </Routes>

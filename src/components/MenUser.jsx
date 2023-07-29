@@ -20,12 +20,12 @@ function MenUser({ datos }) {
         <img className="rounded-full" width={30} src={datos.picture} alt="" />
         {ActiveMenu && (
           <div
-            className="absolute -bottom-[150px]
-           md:left-10 md:  -left-20 z-30  w-36 shadow-md"
+            className="absolute -bottom-[140px]
+           md:left-10 md:  -left-20 z-30  w-36 shadow-md overflow-hidden  rounded-2xl"
           >
-            <ul className=" bg-white  rounded-2xl overflow-hidden text-black  text-center">
+            <ul className=" bg-white   text-black  text-center">
               <li className="text-base hover:bg-black/5 py-2 px-4">
-                <Link to={"/Pedidos"}>Pedidos</Link>
+                <Link to={"/my-account/pedidos"}>Pedidos</Link>
               </li>
               <li className="text-base hover:bg-black/5 py-2 px-4">
                 <Link to={"/my-account"}>Mi cuenta</Link>

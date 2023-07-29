@@ -2,19 +2,21 @@ import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 function ItemPedido({datos}) {
+  // eslint-disable-next-line react/prop-types
+  const { id,fecha,hora,status}= datos;
   return (
     <section className=" border border-black/25  rounded-xl p-2  px-6 mb-4">
-      <Link to={datos.id} className="flex justify-between items-center ">
+      <Link to={id} className="flex justify-between items-center ">
         <div>
-            <h3 className="text-xl font-medium mb-3">Pedido : {datos.id}</h3>
-            <p>Realizado : {datos.fecha}</p>
-            <p>Hora : {datos.hora}</p>
-           <div className="my-2">
-             <span className={`px-3 py-1 rounded-lg font-medium capitalize ${datos.status === 'En proceso' ? 'bg-green-400	' : ''}`}>{datos.status}</span>
+            <h3 className="text-lg font-medium mb-2">Pedido : {id}</h3>
+            <p>Realizado : {fecha}</p>
+            <p>Hora : {hora}</p>
+           <div className="my-1">
+             <span className={`px-3 py-1 rounded-lg font-medium capitalize ${status === 'En proceso' ? 'bg-green-400	' : ''}`}>{status}</span>
            </div>
         </div>
         <div>
-            <svg viewBox="0 0 24 24" fill="none" className="w-8 md:w-9" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 24 24" fill="none" className="w-7 md:w-9" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" strokeWidth={0} />
               <g
                 id="SVGRepo_tracerCarrier"

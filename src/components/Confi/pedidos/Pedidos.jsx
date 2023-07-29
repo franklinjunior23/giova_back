@@ -10,10 +10,9 @@ function Pedidos() {
     const buscar = async () => {
       try {
         const response = await axiosInstance.get('api/orders/user');
-        const data = response.data; // Extraer los datos del resultado de la petición
+        const data = response.data; 
         if (data.exist) {
           setIssetOrders([...data.busqueda]);
-           // Asignar los datos al estado IssetOrders
         } else {
           console.log('No tienes pedidos');
         }

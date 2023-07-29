@@ -2,10 +2,14 @@ import { ShopUseContext } from "../../context/ShopCon";
 import { useForm } from "react-hook-form";
 import { useLogin } from "../../context/Auth";
 import axiosInstance from "../../api/ConfigApi";
+import { useEffect, useState } from "react";
+import { Link, redirect, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CheckForm() {
-  const { ListShop, CountTotal } = ShopUseContext();
+  const { ListShop, CountTotal,deleteCarritoTodo } = ShopUseContext();
   const { UsuarioLog } = useLogin();
+  const [RedirectCompra, setRedirectCompra] = useState(false);
 
   // eslint-disable-next-line react/prop-types
   const InputForm = ({ textlabel, typeinput, NameInput }) => {
@@ -69,9 +73,50 @@ function CheckForm() {
       products: ListShop,
       total: CountTotal,
     });
-    console.log(dat);
+    if(dat.data.pedido){
+      deleteCarritoTodo();
+      toast.promise(
+        // La función o promesa que quieres ejecutar
+        // (puedes colocar tu lógica de compra exitosa aquí)
+        () => {
+          // Mostrar el toast "Procesando compra"
+          toast.loading('Procesando compra...', {
+            autoClose: false,
+          });
+      
+          // Simulando una promesa de éxito
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+            }, 4000);
+          });
+        },
+        {
+          // Configuración personalizada
+          success: 'Compra Exitosa',
+          render: ({ closeToast }) => (
+            <div>
+              {/* Aquí puedes personalizar el contenido del toast */}
+              <div>Compra exitosa</div>
+              <button onClick={closeToast}>Cerrar</button>
+            </div>
+          ),
+        }
+      );
+      setTimeout(()=>{
+        setRedirectCompra(true)
+      },(5000))
+     
+    }
   }
-
+  const navi = useNavigate();
+  useEffect(() => {
+    if(RedirectCompra){
+      navi('/Succesful')
+    }
+   
+  }, [RedirectCompra,navi]);
+  
   return (
     <form onSubmit={handleSubmit(SubmitCreateOrderdata)}>
       <main className="lg:grid gap-[150px] lg:grid-cols-[600px_350px] xl: grid-cols-[600px_450px] justify-between w-full max-w-[1240px] m-auto">

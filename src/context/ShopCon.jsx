@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { ProductGetOne } from "../services/api";
+import { toast } from "react-toastify";
 
 
 const ShopContext = createContext();
@@ -30,6 +31,7 @@ export const ShopProvider = ({ children }) => {
   const getCarrito = (newdata) => {
     if (!localStorage.getItem("Products")) {
       setListShop([{...newdata,cantidad:1}]);
+      toast.success('Producto agregado al carrito',{autoClose: 1000,})
       return localStorage.setItem(
         "Products",
         JSON.stringify([{ ...newdata, cantidad: 1 }])
@@ -41,10 +43,12 @@ export const ShopProvider = ({ children }) => {
     if (exist) {
       exist.cantidad += 1;
       setListShop(busq);
+      toast.success('Producto agregado al carrito',{autoClose: 1000,})
       localStorage.setItem("Products", JSON.stringify(busq));
     } else {
       const nuevo = [...busq, { ...newdata, cantidad: 1 }];
       setListShop(nuevo);
+      toast.success('Producto agregado al carrito',{autoClose: 1000,})
       localStorage.setItem("Products", JSON.stringify(nuevo));
     }
   };
