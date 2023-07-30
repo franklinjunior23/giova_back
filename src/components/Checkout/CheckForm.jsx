@@ -5,7 +5,7 @@ import axiosInstance from "../../api/ConfigApi";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Load from "../Loading/load";
+import Load from "../Loading/Load";
 
 function CheckForm() {
   const { ListShop, CountTotal, deleteCarritoTodo } = ShopUseContext();
