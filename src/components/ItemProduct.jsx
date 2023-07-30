@@ -7,7 +7,7 @@ function ItemProduct({ name, image, precio }) {
         <Link to={`product/${name}`}>
           <img className=""  src={image}  />
           <div className="pt-3 flex justify-between">
-            <p className="overflow-ellipsis lg:text-xl">{name}</p>
+            <p className="overflow-ellipsis lg:text-base">{name}</p>
           </div>
           <p className="pt-1 text-gray-900 lg:text-xl">$ {precio}</p>
         </Link>

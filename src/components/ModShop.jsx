@@ -6,7 +6,7 @@ function ModShop({ funct }) {
   const {ListShop,deleteCarritoTodo,CountTotal} = ShopUseContext();
  
   return (
-    <aside className="fixed z-40 w-[320px] top-5 right-5 md:w-[370px]  bg-slate-50/100 shadow-2xl rounded-xl p-5">
+    <aside className="fixed z-40  w-[85%] top-5 right-5 md:w-[370px]  bg-slate-50/100 shadow-2xl rounded-xl p-5">
       <div className="absolute top-2 right-2 cursor-pointer" onClick={funct}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

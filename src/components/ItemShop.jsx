@@ -6,7 +6,7 @@ function ItemShop({ count, nombreProducto, priceProduct, ubidata }) {
   return (
     <>
       <section
-        className="h-14 flex justify-between items-center  text-center text-xs md:text-base gap-2
+        className="h-14 flex justify-between items-center  text-center text-xs md:text-sm  gap-2
        "
       >
         <div>

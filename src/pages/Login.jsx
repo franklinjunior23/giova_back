@@ -47,8 +47,8 @@ function Login() {
             "url('https://images.pexels.com/photos/3965551/pexels-photo-3965551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
         }}
       >
-        <section className="bg-white p-5 rounded-lg shadow-lg md:w-[450px]">
-          <h2 className="text-xl text-center">Iniciar Seccion</h2>
+        <section className="bg-white p-5 rounded-lg shadow-lg w-[80%] md:w-[450px]">
+          <h2 className="text-xl text-center">Iniciar Sesion</h2>
           <form onSubmit={HandleSubmitDefault}>
             <div className="grid ">
               <label htmlFor="usuario" className="py-2">
@@ -74,7 +74,7 @@ function Login() {
               type="submit"
               className="text-white bg-blue-600 text-center p-3 text-base font-semibold rounded-md w-full mt-10"
             >
-              Iniciar Seccion
+              Iniciar Sesion
             </button>
           </form>
           <button
@@ -86,7 +86,7 @@ function Login() {
               alt='Google "G" Logo'
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
             />
-            Iniciar Seccion
+            Iniciar Sesion
           </button>
         </section>
       </main>
