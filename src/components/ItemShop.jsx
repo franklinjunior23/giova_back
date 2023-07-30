@@ -6,7 +6,7 @@ function ItemShop({ count, nombreProducto, priceProduct, ubidata }) {
   return (
     <>
       <section
-        className="h-14 flex justify-between items-center  text-center text-xs md:text-sm  gap-2
+        className="h-14 flex justify-between items-center  text-center text-xs md:text-sm gap-2
        "
       >
         <div>
@@ -31,7 +31,7 @@ function ItemShop({ count, nombreProducto, priceProduct, ubidata }) {
             <button type="button" className=" bg-red-500 text-white font-medium rounded-md px-3" onClick={()=>{onDelete(ubidata)}}>Eliminar</button>
           </div>
         </div>
-        <h4 className="h-12  grid place-content-center text-ellipsis overflow-hidden  ">
+        <h4 className="h-12  grid place-content-center lg:text-sm text-ellipsis overflow-hidden  ">
           {nombreProducto}
         </h4>
         

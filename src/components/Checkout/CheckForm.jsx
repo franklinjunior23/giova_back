@@ -83,7 +83,7 @@ function CheckForm() {
         setRedirectCompra(false);
         setSuccesful(true)
         deleteCarritoTodo();
-      }, 5000);
+      }, 4000);
     }
   }
   const navi = useNavigate();

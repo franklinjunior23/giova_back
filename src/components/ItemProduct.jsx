@@ -9,7 +9,7 @@ function ItemProduct({ name, image, precio }) {
           <div className="pt-3 flex justify-between">
             <p className="overflow-ellipsis lg:text-base">{name}</p>
           </div>
-          <p className="pt-1 text-gray-900 lg:text-xl">$ {precio}</p>
+          <p className="pt-1 text-gray-900 lg:text-lg">$ {precio}</p>
         </Link>
       </div>
     </>

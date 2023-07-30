@@ -41,13 +41,13 @@ function Login() {
   return (
     <>
       <main
-        className="flex items-center justify-center  bg-cover bg-center py-10  "
+        className="flex items-center  justify-center  bg-cover bg-center py-10  "
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/3965551/pexels-photo-3965551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
         }}
       >
-        <section className="bg-white p-5 rounded-lg shadow-lg w-[80%] md:w-[450px]">
+        <section className="bg-white p-5 rounded-lg shadow-lg w-[80%]  md:w-[450px]">
           <h2 className="text-xl text-center">Iniciar Sesion</h2>
           <form onSubmit={HandleSubmitDefault}>
             <div className="grid ">

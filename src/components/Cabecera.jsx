@@ -13,7 +13,7 @@ function Cabecera() {
   };
   return (
     <>
-      <nav id="header" className="w-full z-30 top-0 py-1">
+      <nav id="header" className="w-full z-30 relative  py-1">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
           <label
             htmlFor="menu-toggle"
@@ -57,7 +57,7 @@ function Cabecera() {
             </nav>
           </div>
 
-          <div className="order-1 md:order-2 relative">
+          <div className="order-1 md:order-2">
             <Link
               className="flex items-center  no-underline hover:no-underline font-bold text-gray-800 text-lg "
               to={"/"}
@@ -118,8 +118,9 @@ function Cabecera() {
             </i>
           </div>
         </div>
+        {ActiveModal && <ModShop funct={ModalActive} />}
       </nav>
-      {ActiveModal && <ModShop funct={ModalActive} />}
+      
     </>
   );
 }
