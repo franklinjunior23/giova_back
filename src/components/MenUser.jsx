@@ -23,13 +23,13 @@ function MenUser({ datos }) {
           >
             <ul className=" bg-white   text-black  text-center">
               <li className="text-base hover:bg-black/5 py-2 px-4">
-                <Link to={"/my-account/pedidos"}>Pedidos</Link>
+                <Link to={"/my-account/pedidos"} onClick={ activar}>Pedidos</Link>
               </li>
               <li className="text-base hover:bg-black/5 py-2 px-4">
-                <Link to={"/my-account"}>Mi cuenta</Link>
+                <Link to={"/my-account"} onClick={ activar}>Mi cuenta</Link>
               </li>
               <li className="text-base  hover:bg-black/5 py-2 px-4">
-                <Link to={"/CerrarSeccion"}>Cerrar Seccion</Link>
+                <Link to={"/CerrarSeccion"} onClick={ activar}>Cerrar Seccion</Link>
               </li>
             </ul>
           </div>

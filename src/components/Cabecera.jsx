@@ -57,7 +57,7 @@ function Cabecera() {
             </nav>
           </div>
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 relative">
             <Link
               className="flex items-center  no-underline hover:no-underline font-bold text-gray-800 text-lg "
               to={"/"}

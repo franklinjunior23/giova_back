@@ -70,12 +70,13 @@ function CheckForm() {
     },
   });
   async function SubmitCreateOrderdata(data) {
+    setRedirectCompra(true);
     const dat = await axiosInstance.post("/api/Orders", {
       user: data,
       products: ListShop,
       total: CountTotal,
     });
-    setRedirectCompra(true);
+    
     if (dat.data.pedido) {
       setTimeout(() => {
         toast.success("Pedido Realizado");
