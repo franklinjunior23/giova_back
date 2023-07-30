@@ -63,7 +63,7 @@ function Cabecera() {
                 className="flex items-center  no-underline hover:no-underline font-bold text-gray-800 text-lg "
                 to={"/"}
               >
-                B & H
+               B & S
                  
               </Link>
 

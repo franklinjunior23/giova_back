@@ -31,11 +31,11 @@ function Carrusel() {
             >
               <div className="container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                  <p className="text-black text-2xl my-4">
-                    Stripy Zig Zag Jigsaw Pillow and Duvet Set
+                  <p className="text-white font-semibold text-2xl my-4">
+                  ¡Descubre el lujo en cada detalle con nuestro producto, diseñado para realzar tu estilo!
                   </p>
                   <a
-                    className="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black"
+                    className="text-xl inline-block text-white no-underline border-b border-white leading-relaxed"
                     href="#"
                   >
                     view product
@@ -78,11 +78,11 @@ function Carrusel() {
             >
               <div className="container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                  <p className="text-black text-2xl my-4">
-                    Real Bamboo Wall Clock
+                <p className="text-white font-semibold text-2xl my-4">
+                  ¡Descubre el lujo en cada detalle con nuestro producto, diseñado para realzar tu estilo!
                   </p>
                   <a
-                    className="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black"
+                    className="text-xl inline-block text-white no-underline border-b border-white leading-relaxed"
                     href="#"
                   >
                     view product
@@ -127,11 +127,11 @@ function Carrusel() {
             >
               <div className="container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                  <p className="text-black text-2xl my-4">
-                    Brown and blue hardbound book
+                <p className="text-white font-semibold text-2xl my-4">
+                  ¡Descubre el lujo en cada detalle con nuestro producto, diseñado para realzar tu estilo!
                   </p>
                   <a
-                    className="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black"
+                    className="text-xl inline-block text-white no-underline border-b border-white leading-relaxed"
                     href="#"
                   >
                     view product

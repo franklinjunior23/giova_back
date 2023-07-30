@@ -8,16 +8,15 @@ function Pie() {
     <div className="w-full mx-auto flex flex-wrap">
       <div className="flex w-full lg:w-1/2 ">
         <div className="px-3 md:px-0">
-          <h3 className="font-bold text-gray-900">About</h3>
+          <h3 className="font-bold text-gray-900">B & S</h3>
           <p className="py-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
+          Bienvenido a B & S, tu destino para encontrar muebles de calidad y diseño excepcional. Somos una empresa dedicada a ofrecer soluciones elegantes y funcionales para tu hogar u oficina. Nuestra pasión por el diseño y la atención al detalle nos impulsan a crear muebles que se adapten perfectamente a tu estilo y necesidades.
           </p>
         </div>
       </div>
       <div className="flex w-full lg:w-1/2 lg:justify-end lg:text-right mt-6 md:mt-0">
         <div className="px-3 md:px-0">
           <h3 className="text-left font-bold text-gray-900">Social</h3>
-
           <div className="w-full flex items-center py-4 mt-0">
             <a href="#" className="mx-2">
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -40,7 +39,11 @@ function Pie() {
               </svg>
             </a>
           </div>
+          <div>
+          <img className="w-[200px] md:w-[300px]" src="https://incredibletravelperu.com/wp-content/uploads/2020/04/Metodos-de-pago-incredible-peru-travel.png" alt="" />
+      </div>
         </div>
+        
       </div>
     </div>
   </div>

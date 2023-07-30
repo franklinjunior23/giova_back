@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import { ShopProvider } from "./context/ShopCon";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProductID from "./pages/ProductID";
-import Nosotros from "./pages/Nosotros";
 import Login from "./pages/Login";
 import { DateLoginProvider } from "./context/Auth";
 import Checkout from "./pages/Checkout";
@@ -14,7 +13,7 @@ import Pedidos from "./components/Confi/pedidos/Pedidos";
 import PedidoExitoso from "./pages/PedidoExitoso";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import Load from "./components/Loading/Load";
+import Abaut from "./components/Abaut";
 function App() {
   
 
@@ -29,7 +28,7 @@ function App() {
               <Route path="/" element={<User />}>
               <Route index element={<Home />} />
                 <Route path="product/:NameProduct" element={<ProductID />} />
-                <Route path="Nosotros" element={<Nosotros />} />
+                <Route path="Nosotros" element={<Abaut />} />
                 <Route path="Login" element={<Login />} />
                 <Route path="Checkout" element={<Checkout />} />
                 <Route path="CerrarSeccion" element={ <CerrarSeccion/> } />
