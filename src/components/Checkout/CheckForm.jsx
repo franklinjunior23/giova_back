@@ -3,13 +3,15 @@ import { useForm } from "react-hook-form";
 import { useLogin } from "../../context/Auth";
 import axiosInstance from "../../api/ConfigApi";
 import { useEffect, useState } from "react";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Load from "../Loading/load";
 
 function CheckForm() {
-  const { ListShop, CountTotal,deleteCarritoTodo } = ShopUseContext();
+  const { ListShop, CountTotal, deleteCarritoTodo } = ShopUseContext();
   const { UsuarioLog } = useLogin();
   const [RedirectCompra, setRedirectCompra] = useState(false);
+  const [Succesful, setSuccesful] = useState(false);
 
   // eslint-disable-next-line react/prop-types
   const InputForm = ({ textlabel, typeinput, NameInput }) => {
@@ -69,182 +71,169 @@ function CheckForm() {
   });
   async function SubmitCreateOrderdata(data) {
     const dat = await axiosInstance.post("/api/Orders", {
-      user:data,
+      user: data,
       products: ListShop,
       total: CountTotal,
     });
-    if(dat.data.pedido){
-      deleteCarritoTodo();
-      toast.promise(
-        // La función o promesa que quieres ejecutar
-        // (puedes colocar tu lógica de compra exitosa aquí)
-        () => {
-          // Mostrar el toast "Procesando compra"
-          toast.loading('Procesando compra...', {
-            autoClose: false,
-          });
-      
-          // Simulando una promesa de éxito
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-            }, 4000);
-          });
-        },
-        {
-          // Configuración personalizada
-          success: 'Compra Exitosa',
-          render: ({ closeToast }) => (
-            <div>
-              {/* Aquí puedes personalizar el contenido del toast */}
-              <div>Compra exitosa</div>
-              <button onClick={closeToast}>Cerrar</button>
-            </div>
-          ),
-        }
-      );
-      setTimeout(()=>{
-        setRedirectCompra(true)
-      },(5000))
-     
+    setRedirectCompra(true);
+    if (dat.data.pedido) {
+      setTimeout(() => {
+        toast.success("Pedido Realizado");
+        setRedirectCompra(false);
+        setSuccesful(true)
+        deleteCarritoTodo();
+      }, 5000);
     }
   }
   const navi = useNavigate();
   useEffect(() => {
-    if(RedirectCompra){
-      navi('/Succesful')
+    if (Succesful) {
+      navi("/Succesful");
     }
-   
-  }, [RedirectCompra,navi]);
-  
-  return (
-    <form onSubmit={handleSubmit(SubmitCreateOrderdata)}>
-      <main className="lg:grid gap-[150px] lg:grid-cols-[600px_350px] xl: grid-cols-[600px_450px] justify-between w-full max-w-[1240px] m-auto">
-        <main>
-          <h3 className="text-2xl font-light py-7">Detalles de facturacion</h3>
-          <section>
-            <div className="w-full grid grid-cols-2 gap-2 lg:gap-5">
-              <InputForm
-                textlabel={"Nombre Completo"}
-                NameInput={"Nombre"}
-                typeinput={0}
-              />
-              <InputForm
-                textlabel={"Apellido Completo"}
-                NameInput={"Apellido"}
-                typeinput={0}
-              />
-            </div>
-          </section>
-          <section>
-            <InputForm
-              textlabel={"Numero De Celular"}
-              NameInput={"Celular"}
-              typeinput={1}
-            />
-          </section>
-          <section>
-            <div className="grid grid-cols-2 gap-2 lg:gap-5">
-              <InputForm
-                textlabel={"Departamento"}
-                NameInput={"Departamento"}
-                typeinput={0}
-              />
-              <InputForm
-                textlabel={"Distrito"}
-                NameInput={"Distrito"}
-                typeinput={0}
-              />
-            </div>
-          </section>
-          <section>
-            <InputForm
-              textlabel={"Calle Dirrecion"}
-              NameInput={"Dirrecion"}
-              typeinput={0}
-            />
-          </section>
-          <section>
-            <InputForm textlabel={"Email"} NameInput={"Email"} typeinput={0} />
-          </section>
-        </main>
-        <main className="">
-          <h3 className="text-2xl font-light py-7">Detalles de Orden</h3>
+  }, [Succesful, navi]);
 
-          <section>
-            {ListShop.map((dat) => (
-              <ItemShop
-                key={dat.id}
-                name={dat.nombre}
-                cantid={dat.cantidad}
-                price={dat.precio}
+  return (
+    <>
+    {RedirectCompra ?(
+       <Load/>
+      ):(
+        <form onSubmit={handleSubmit(SubmitCreateOrderdata)}>
+        <main className="lg:grid gap-[150px] lg:grid-cols-[600px_350px] xl: grid-cols-[600px_450px] justify-between w-full max-w-[1240px] m-auto">
+          <main>
+            <h3 className="text-2xl font-light py-7">
+              Detalles de facturacion
+            </h3>
+            <section>
+              <div className="w-full grid grid-cols-2 gap-2 lg:gap-5">
+                <InputForm
+                  textlabel={"Nombre Completo"}
+                  NameInput={"Nombre"}
+                  typeinput={0}
+                />
+                <InputForm
+                  textlabel={"Apellido Completo"}
+                  NameInput={"Apellido"}
+                  typeinput={0}
+                />
+              </div>
+            </section>
+            <section>
+              <InputForm
+                textlabel={"Numero De Celular"}
+                NameInput={"Celular"}
+                typeinput={1}
               />
-            ))}
-          </section>
-          <main className="bg-slate-400/10 rounded-md px-6 py-3 border font-medium">
-            <div className="flex justify-between items-center py-2">
-              <h4 className="text-base">Subtotal</h4>{" "}
-              <span className="text-sm">S/. {CountTotal}</span>
-            </div>
-            <article>
-              <h4 className="py-3 text-sm">Tipo De Envio</h4>
-              <section className="flex justify-between items-center">
-                <section>
-                  <ul className="flex flex-col gap-2">
-                    <li>
-                      <label>
-                        <input
-                          type="radio"
-                          value={"Normal"}
-                          {...register("Metodo")}
-                          className="mr-2"
-                        />
-                        Normal
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="radio"
-                          value={"Rapido"}
-                          {...register("Metodo")}
-                          className="mr-2"
-                        />
-                        Rapido
-                      </label>
-                    </li>
-                  </ul>
-                </section>
-                <section>
-                  <ul className="flex flex-col gap-2">
-                    <li>
-                      <span>S/. 50.00</span>
-                    </li>
-                    <li>
-                      <span>S/. 100.00</span>
-                    </li>
-                  </ul>
-                </section>
-              </section>
-              <section className="mt-7">
-                <div className="flex justify-between items-center text-xl">
-                  <h4 className="">Total</h4>
-                  <span>S/. {CountTotal}</span>
-                </div>
-              </section>
-            </article>
+            </section>
+            <section>
+              <div className="grid grid-cols-2 gap-2 lg:gap-5">
+                <InputForm
+                  textlabel={"Departamento"}
+                  NameInput={"Departamento"}
+                  typeinput={0}
+                />
+                <InputForm
+                  textlabel={"Distrito"}
+                  NameInput={"Distrito"}
+                  typeinput={0}
+                />
+              </div>
+            </section>
+            <section>
+              <InputForm
+                textlabel={"Calle Dirrecion"}
+                NameInput={"Dirrecion"}
+                typeinput={0}
+              />
+            </section>
+            <section>
+              <InputForm
+                textlabel={"Email"}
+                NameInput={"Email"}
+                typeinput={0}
+              />
+            </section>
           </main>
-          <section className="mt-5">
-            <button
-              type="submit"
-              className="w-full bg-black text-lg py-4 rounded-xl text-white font-light "
-            >
-              Confirmar Orden
-            </button>
-          </section>
+          <main className="">
+            <h3 className="text-2xl font-light py-7">Detalles de Orden</h3>
+
+            <section>
+              {ListShop.map((dat) => (
+                <ItemShop
+                  key={dat.id}
+                  name={dat.nombre}
+                  cantid={dat.cantidad}
+                  price={dat.precio}
+                />
+              ))}
+            </section>
+            <main className="bg-slate-400/10 rounded-md px-6 py-3 border font-medium">
+              <div className="flex justify-between items-center py-2">
+                <h4 className="text-base">Subtotal</h4>{" "}
+                <span className="text-sm">S/. {CountTotal}</span>
+              </div>
+              <article>
+                <h4 className="py-3 text-sm">Tipo De Envio</h4>
+                <section className="flex justify-between items-center">
+                  <section>
+                    <ul className="flex flex-col gap-2">
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            value={"Normal"}
+                            {...register("Metodo")}
+                            className="mr-2"
+                          />
+                          Normal
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            value={"Rapido"}
+                            {...register("Metodo")}
+                            className="mr-2"
+                          />
+                          Rapido
+                        </label>
+                      </li>
+                    </ul>
+                  </section>
+                  <section>
+                    <ul className="flex flex-col gap-2">
+                      <li>
+                        <span>S/. 50.00</span>
+                      </li>
+                      <li>
+                        <span>S/. 100.00</span>
+                      </li>
+                    </ul>
+                  </section>
+                </section>
+                <section className="mt-7">
+                  <div className="flex justify-between items-center text-xl">
+                    <h4 className="">Total</h4>
+                    <span>S/. {CountTotal}</span>
+                  </div>
+                </section>
+              </article>
+            </main>
+            <section className="mt-5">
+              <button
+                type="submit"
+                className="w-full bg-black text-lg py-4 rounded-xl text-white font-light "
+              >
+                Confirmar Orden
+              </button>
+            </section>
+          </main>
         </main>
-      </main>
-    </form>
+      </form>
+      )
+    }
+     
+    </>
   );
 }
 

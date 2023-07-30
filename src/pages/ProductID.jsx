@@ -63,7 +63,7 @@ function ProductID() {
                </div>
                <button
                  type="button"
-                 className="py-3 w-full bg-black text-white mt-10 rounded-md font-semibold li"
+                 className="py-2 text-sm px-4  text-black lg:mt-10 rounded-md border border-black"
                  onClick={() => {
                    addpro(ProductInfo);
                  }}

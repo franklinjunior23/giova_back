@@ -38,10 +38,12 @@ function ModShop({ funct }) {
        
         
       </main>
-      <span>TOTAL : $/ {CountTotal}</span>
+      <span>Total : $/ {CountTotal}</span>
       <br />
-      <Link to={'/Checkout'} className="bg-red-400 py-2 px-4">Realizar Compra</Link>
-      <button type="button" onClick={()=>{deleteCarritoTodo()}}>Vaciar Carrito</button>
+      <div className="grid grid-cols-2">
+        <Link to={'/Checkout'} className="bg-red-400 py-2 px-4">Comprar</Link>
+        <button type="button" onClick={()=>{deleteCarritoTodo()}}>Vaciar Carrito</button>
+      </div>
     </aside>
   );
 }
