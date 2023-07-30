@@ -1,6 +1,6 @@
 function Load() {
   return (
-    <div className="text-center h-96">
+    <div className="text-center h-[70vh] grid place-content-center">
       <div role="status">
         <svg
           aria-hidden="true"

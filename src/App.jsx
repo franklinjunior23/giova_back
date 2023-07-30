@@ -14,6 +14,7 @@ import Pedidos from "./components/Confi/pedidos/Pedidos";
 import PedidoExitoso from "./pages/PedidoExitoso";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Load from "./components/Loading/Load";
 function App() {
   
 
