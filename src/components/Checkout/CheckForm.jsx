@@ -70,19 +70,20 @@ function CheckForm() {
     },
   });
   async function SubmitCreateOrderdata(data) {
+    setRedirectCompra(true);
     const dat = await axiosInstance.post("/api/Orders", {
       user: data,
       products: ListShop,
       total: CountTotal,
     });
-    setRedirectCompra(true);
+    
     if (dat.data.pedido) {
       setTimeout(() => {
         toast.success("Pedido Realizado");
         setRedirectCompra(false);
         setSuccesful(true)
         deleteCarritoTodo();
-      }, 5000);
+      }, 4000);
     }
   }
   const navi = useNavigate();
