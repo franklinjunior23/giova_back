@@ -14,6 +14,7 @@ import PedidoExitoso from "./pages/PedidoExitoso";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import Abaut from "./components/Abaut";
+import Detalle from "./components/detalleOrden/Detalle";
 function App() {
   
 
@@ -36,9 +37,11 @@ function App() {
                 <Route path="my-account/*" element={<Configuracion/>}>
                   <Route index element={<Navigate to='edit'/>} />
                   <Route  path="edit" element={<FormEditUser/>} />
-                  <Route path="Pedidos" element={<Pedidos/>} />
+                  <Route path="Pedidos" element={<Pedidos/>} >
+                    <Route index  element={<Pedidos/>}/>
+                    <Route path="detalle/:orden" element={<Detalle/>}/>
+                  </Route>
                 </Route>
-                <Route path="Pedidos" element={<><h1>Pedidos</h1></>} />
               </Route>
               <Route path="*" element={<h3>Error 404</h3>} />
             </Routes>
