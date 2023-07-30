@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 function ItemProduct({ name, image, precio }) {
   return (
     <>
