@@ -2,56 +2,40 @@
 import { ShopUseContext } from "../context/ShopCon";
 
 function ItemShop({ count, nombreProducto, priceProduct, ubidata }) {
-  /**const [CountProduct, setCountProduct] = useState(0);
-  const adquisicion = ()=>{
-    setCountProduct(count)
-  }
-  useEffect(() => {
-    adquisicion()
-  }, [CountProduct]);
-  const AumentCount = ()=>{
-    setCountProduct(CountProduct+1)
-  }
-  const DisCount = ()=>{
-    setCountProduct(CountProduct-1)
-  }
-  const Eliminate= ()=>{
-    console.log("eliminandoo")
-  }
-  */
   const { onDecrease, onIncrease, onDelete } = ShopUseContext();
   return (
     <>
       <section
-        className="h-14  rounded-lg grid grid-cols-[60px_95px_60px] lg:grid-cols-[80px_130px_80px] justify-between items-center  text-center text-sm md:text-lg gap-2
+        className="h-14 flex justify-between items-center  text-center text-xs md:text-base gap-2
        "
       >
         <div>
-          <div className=" grid grid-cols-3 place-content-center rounded-3xl overflow-hidden">
+          <div className=" flex gap-1 place-content-center  overflow-hidden">
             <button
               type="button"
               onClick={()=>{onDecrease(ubidata)}}
-              className="px-2  bg-black text-white font-extrabold text-center"
+              className="px-2  border border-black/30 rounded-md font-extrabold text-center"
             >
               -
             </button>
-            <h3 className="block bg-white "> {count} </h3>
+            <h3 className="block bg-white px-1 w-6 border "> {count} </h3>
             <button
               type="button"
               onClick={()=>{onIncrease(ubidata)}}
-              className="px-2 bg-black text-white font-extrabold text-center"
+              className="px-2 border border-black/30 rounded-md font-extrabold text-center"
             >
               +
             </button>
           </div>
-          <div>
-            <button type="button" onClick={()=>{onDelete(ubidata)}}>Eliminar</button>
+          <div className="mt-2">
+            <button type="button" className=" bg-red-500 text-white font-medium rounded-md px-3" onClick={()=>{onDelete(ubidata)}}>Eliminar</button>
           </div>
         </div>
-        <h4 className="h-12  grid place-content-center text-ellipsis overflow-hidden ... cursor-not-allowed ">
+        <h4 className="h-12  grid place-content-center text-ellipsis overflow-hidden  ">
           {nombreProducto}
         </h4>
-        <span className="font-bold">S/.{priceProduct}</span>
+        
+        <span className="font-bold ">S/.{priceProduct}</span>
       </section>
       <hr />
     </>
