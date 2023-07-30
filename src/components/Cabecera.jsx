@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ModShop from "./ModShop";
 import { Link } from "react-router-dom";
 import { useLogin } from "../context/Auth";
@@ -26,7 +26,6 @@ function Cabecera() {
               height="20"
               viewBox="0 0 20 20"
             >
-              <title>menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
           </label>
@@ -43,7 +42,6 @@ function Cabecera() {
                     to={"/"}
                     className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                   >
-                    {" "}
                     Shop
                   </Link>
                 </li>
@@ -61,13 +59,13 @@ function Cabecera() {
 
           <div className="order-1 md:order-2">
             <Link
-              className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
+              className="flex items-center  no-underline hover:no-underline font-bold text-gray-800 text-lg "
               to={"/"}
             >
               <svg
                 className="fill-current text-gray-800 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
+                width="23"
                 height="24"
                 viewBox="0 0 24 24"
               >
@@ -81,18 +79,18 @@ function Cabecera() {
             className="order-2 md:order-3 flex items-center"
             id="nav-content"
           >
-            {UsuarioLog.length!==0  ? (
+            {UsuarioLog.length !== 0 ? (
               <MenUser datos={UsuarioLog} />
             ) : (
               <Link
-                className="inline-block no-underline hover:text-black"
+                className=" no-underline hover:text-black"
                 to={"/Login"}
               >
                 <svg
                   className="fill-current hover:text-black"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="23"
+                  height="23"
                   viewBox="0 0 24 24"
                 >
                   <circle fill="none" cx="12" cy="7" r="3" />

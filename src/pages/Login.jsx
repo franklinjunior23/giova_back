@@ -74,7 +74,7 @@ function Login() {
               type="submit"
               className="text-white bg-blue-600 text-center p-3 text-base font-semibold rounded-md w-full mt-10"
             >
-              Iniciar Seccion{" "}
+              Iniciar Seccion
             </button>
           </form>
           <button
@@ -86,7 +86,7 @@ function Login() {
               alt='Google "G" Logo'
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
             />
-            Iniciar Seccion con Google
+            Iniciar Seccion
           </button>
         </section>
       </main>

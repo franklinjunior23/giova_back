@@ -10,10 +10,8 @@ function MenUser({ datos }) {
   };
   return (
     <>
-      {/** funciones para que haga hover, segun jsx
-       *  onMouseEnter={setActiveMenu} onMouseLeave={activar} */}
       <div
-        className="flex justify-center items-center gap-2 p-1 px-3 border rounded-xl text-sm cursor-pointer relative"
+        className="flex justify-center items-center gap-2 p-1 px-2 border rounded-xl text-sm cursor-pointer relative"
         onClick={activar}
       >
         <h1 className="hidden md:block">{datos.given_name}</h1>

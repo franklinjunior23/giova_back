@@ -6,7 +6,7 @@ function ModShop({ funct }) {
   const {ListShop,deleteCarritoTodo,CountTotal} = ShopUseContext();
  
   return (
-    <aside className="fixed z-40 w-[300px] top-5 right-5 md:w-[400px]  bg-slate-50/100 shadow-2xl rounded-xl p-5">
+    <aside className="fixed z-40 w-[280px] top-5 right-5 md:w-[370px]  bg-slate-50/100 shadow-2xl rounded-xl p-5">
       <div className="absolute top-2 right-2 cursor-pointer" onClick={funct}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ function ModShop({ funct }) {
         </svg>
       </div>
       <h3 className="text-xl ">Carrito De Compras</h3>
-      <main className="h-[460px] lg:h-[600px] overflow-y-scroll flex flex-col gap-2 px-1 py-2">
+      <main className="h-[320px] lg:h-[400px] overflow-y-scroll flex flex-col gap-2 px-1 py-2">
         <hr/>
         {
           ListShop.length == 0 ? (<h1>vacio</h1>): (
