@@ -8,9 +8,9 @@ function Pie() {
     <div className="w-full mx-auto flex flex-wrap">
       <div className="flex w-full lg:w-1/2 ">
         <div className="px-3 md:px-0">
-          <h3 className="font-bold text-gray-900">B & S</h3>
+          <h3 className="font-bold text-gray-900">Giova Store</h3>
           <p className="py-4">
-          Bienvenido a B & S, tu destino para encontrar muebles de calidad y diseño excepcional. Somos una empresa dedicada a ofrecer soluciones elegantes y funcionales para tu hogar u oficina. Nuestra pasión por el diseño y la atención al detalle nos impulsan a crear muebles que se adapten perfectamente a tu estilo y necesidades.
+          En Giova Store, somos una empresa especializada en ropa de calidad y diseño excepcional. Nuestra misión es ofrecer a nuestros clientes soluciones elegantes y funcionales para que encuentren prendas que reflejen su estilo y se adapten perfectamente a sus necesidades.
           </p>
         </div>
       </div>
