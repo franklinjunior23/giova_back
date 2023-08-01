@@ -6,7 +6,7 @@ function ItemPedido({datos}) {
   const { id,fecha,hora,status}= datos;
   return (
     <section className=" border border-black/25  rounded-xl p-2  px-6 mb-4">
-      <Link to={id} className="flex justify-between items-center ">
+      <Link to={`detalle/${id}`} className="flex justify-between items-center ">
         <div>
             <h3 className="text-lg font-medium mb-2">Pedido : {id}</h3>
             <p>Realizado : {fecha}</p>

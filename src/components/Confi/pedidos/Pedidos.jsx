@@ -2,10 +2,35 @@ import { useEffect, useState } from "react";
 import NotPedidos from "./NotPedidos";
 import axiosInstance from "../../../api/ConfigApi";
 import ItemPedido from "./ItemPedido";
+import { Outlet, useParams } from "react-router-dom";
 
 function Pedidos() {
   const [IssetOrders, setIssetOrders] = useState([]);
-
+  const {orden}= useParams();
+  const RenderizarDetalle = ()=>{
+    if(orden){
+      return <Outlet/>
+    }
+    else{
+      return(
+<>
+    
+    {IssetOrders.length==0 ? (
+      <NotPedidos />
+    ) : (
+      <>
+      <section className="">
+      {IssetOrders.map((dat) => (
+          <ItemPedido datos={dat} key={dat.id} />
+        ))}
+      </section>
+       
+      </>
+    )}
+  </>
+      )
+    }
+  }
   useEffect(() => {
     const buscar = async () => {
       try {
@@ -23,20 +48,7 @@ function Pedidos() {
     buscar();
   }, []);
   return (
-    <>
-      {IssetOrders.length==0 ? (
-        <NotPedidos />
-      ) : (
-        <>
-        <section className="">
-        {IssetOrders.map((dat) => (
-            <ItemPedido datos={dat} key={dat.id} />
-          ))}
-        </section>
-         
-        </>
-      )}
-    </>
+    <RenderizarDetalle/>
   );
 }
 
