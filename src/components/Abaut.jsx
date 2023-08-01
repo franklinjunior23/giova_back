@@ -16,7 +16,7 @@ function Abaut() {
           </p>
         </div>
         <div>
-          <img src="https://images.pexels.com/photos/7004665/pexels-photo-7004665.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" className="lg:w-[300px]" alt="" />
+          <img src="https://images.pexels.com/photos/17647508/pexels-photo-17647508/free-photo-of-ligero-moda-hombre-gente.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="lg:w-[300px]" alt="" />
          
         </div>
       </section>

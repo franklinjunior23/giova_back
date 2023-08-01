@@ -6,7 +6,7 @@ function ItemProduct({ name, image, precio }) {
     <>
       <div className="w-full  pb-5">
         <Link to={`product/${name}`}>
-          <img className="w-full  lg:w-[90%] h-[210px] md:h-[290px] lg:h-[310px]"  src={image}  />
+          <img className="w-full  lg:w-[90%] h-[200px] md:h-[290px] lg:h-[310px]"  src={image}  />
           <div className="pt-3 flex justify-between">
             <p className="overflow-ellipsis lg:text-base">{name}</p>
           </div>
