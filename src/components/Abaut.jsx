@@ -12,12 +12,12 @@ function Abaut() {
           Sobre Nosotros
           </h3>
           <p className="mb-8 max-w-md text-base">
-          En B & S, comprendemos que cada espacio es único, y por eso te ofrecemos una amplia variedad de opciones para que puedas encontrar el mobiliario ideal que complemente tu entorno. Desde cómodos sofás y seccionales hasta escritorios modernos y organizadores prácticos, nuestro catálogo abarca una diversidad de estilos y funcionalidades para que puedas crear el ambiente perfecto.
+          En Giova Store, nos apasiona impulsar tu estilo de vida activo y saludable a través de nuestra exclusiva línea de ropa deportiva de alta calidad. Nuestra empresa fue fundada por un equipo de entusiastas del deporte, y desde entonces, hemos estado comprometidos con proporcionar prendas que combinen comodidad, estilo y rendimiento en cada paso de tu camino.
           </p>
         </div>
         <div>
-          <img src="https://media-private.canva.com/qAE3k/MAFqEFqAE3k/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230730T114957Z&X-Amz-Expires=51615&X-Amz-Signature=187be6ca5ad8ee83c62d2b2c71a3fe7510db8bc9a66ec568a46e181f2f621094&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2031%20Jul%202023%2002%3A10%3A12%20GMT" alt="" />
-          <img src="https://media-private.canva.com/f2cEM/MAFqD7f2cEM/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230730T010023Z&X-Amz-Expires=88841&X-Amz-Signature=c3bdbd9206ef63c22e59fc2dc927cbc98944478cc51b6cc95de00da8d3204db8&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2031%20Jul%202023%2001%3A41%3A04%20GMT" alt="" />
+          <img src="https://images.pexels.com/photos/7004665/pexels-photo-7004665.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" className="lg:w-[300px]" alt="" />
+         
         </div>
       </section>
     </>
